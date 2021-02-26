@@ -1,3 +1,11 @@
 {
-	"utc_build_time": "2020-04-27 18:04:34.640783"
+	"utc_build_time": "2020-04-27 18:04:34.640783",
+    "icon_paths": ["."],
+    "shelf_items": [
+        {
+            "command": "import incrementalNotes\nincrementalNotes.printRecentNotes(-5)",
+            "image": "recentIncrementalNotes.png",
+            "annotation": "Print out the last few notes"
+        }
+    ]
 }

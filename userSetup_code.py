@@ -4,9 +4,7 @@ try:
     import mayaHooks.override.incrementalSaveScene
     import incrementalNotes
 
-    mayaHooks.override.incrementalSaveScene.enable()
-
-    mayaHooks.override.incrementalSaveScene.registerOnSave(incrementalNotes.takeNote)
+    mayaHooks.override.incrementalSaveScene.callback_onSave.register(incrementalNotes.takeNote)
 
 except Exception:
     import traceback

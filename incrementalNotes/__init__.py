@@ -19,7 +19,7 @@ def takeNote(incrementDirPath, newVersionString, sceneToMove):
 
     prevNotes = getOrderedNotes()
 
-    msg = '\n\n'.join( [ver + '\n' + '\n'.join(data) for ver, data in prevNotes.items()[-3:]] ) if prevNotes else None
+    msg = '\n\n'.join( [ver + '\n' + '\n'.join(data) for ver, data in list(prevNotes.items())[-3:]] ) if prevNotes else None
 
     res = maya.cmds.promptDialog(m=msg)
 
@@ -111,7 +111,7 @@ def getOrderedNotes(start=None, end=None):
                 notes[key].append(line)
     
     if start or end:
-        return OrderedDict( notes.items()[start:end] )
+        return OrderedDict( list(notes.items())[start:end] )
     else:
         return notes
         
